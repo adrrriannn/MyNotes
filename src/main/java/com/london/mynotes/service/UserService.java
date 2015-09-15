@@ -15,7 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.london.mynotes.domain.User;
+import com.london.mynotes.dto.UserDTO;
 import com.london.mynotes.repository.UserRepository;
+import com.london.mynotes.transformer.UserTransformer;
 import java.util.List;
 
 @Service
@@ -25,16 +27,19 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     
-    public List<User> findAll(){
-        return userRepository.findAll();
+    @Autowired
+    private UserTransformer userTransformer;
+    
+    public List<UserDTO> findAll(){
+        return userTransformer.entityListToDtoList(userRepository.findAll());
     }
     
-    public User findOne(Long id){
-        return userRepository.findOne(id);
+    public UserDTO findOne(Long id){
+        return userTransformer.entityToDto(userRepository.findOne(id));
     }
             
-    public User save(User user){
-        return userRepository.save(user);
+    public UserDTO save(User user){
+        return userTransformer.entityToDto(userRepository.save(user));
     }
     
     public void delete(Long id){

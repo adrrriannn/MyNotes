@@ -1,14 +1,14 @@
-package com.london.mynotes.form;
+package com.london.mynotes.dto;
 
 /**
  *
  * @author adrián
  */
-
-import org.springframework.format.annotation.DateTimeFormat;
-public class NoteForm {
+public class NoteDTO {
     
     private Long id;
+    
+    private String name;
     
     private Double coordenateX;
     
@@ -18,7 +18,7 @@ public class NoteForm {
     
     private Double rating;
 
-    private Long userId; 
+    private Long userId;
     
     public Long getId() {
         return id;
@@ -26,6 +26,14 @@ public class NoteForm {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getCoordenateX() {
@@ -66,5 +74,5 @@ public class NoteForm {
 
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
+    }           
 }

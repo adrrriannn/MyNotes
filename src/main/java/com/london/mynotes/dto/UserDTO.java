@@ -1,4 +1,9 @@
-package com.london.mynotes.form;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.london.mynotes.dto;
 
 import com.london.mynotes.domain.Role;
 
@@ -6,8 +11,7 @@ import com.london.mynotes.domain.Role;
  *
  * @author adrián
  */
-public class UserForm {
-    
+public class UserDTO {
     private Long id;
     
     private String username;
@@ -17,7 +21,7 @@ public class UserForm {
     private String avatar;
     
     private String email;
-        
+    
     private Role role;
 
     public Long getId() {
@@ -66,5 +70,5 @@ public class UserForm {
 
     public void setRole(Role role) {
         this.role = role;
-    }            
+    }    
 }

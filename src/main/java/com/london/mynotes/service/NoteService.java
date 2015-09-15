@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.london.mynotes.domain.Note;
+import com.london.mynotes.dto.NoteDTO;
 import com.london.mynotes.repository.NoteRepository;
+import com.london.mynotes.transformer.NoteTransformer;
 import java.util.List;
 
 @Service
@@ -20,16 +22,19 @@ public class NoteService {
     @Autowired
     private NoteRepository noteRepository;
     
-    public List<Note> findAll(){
-        return noteRepository.findAll();
+    @Autowired
+    private NoteTransformer noteTransformer;
+    
+    public List<NoteDTO> findAll(){
+        return noteTransformer.entityListToDtoList(noteRepository.findAll());
     }
     
-    public Note findOne(Long id){
-        return noteRepository.findOne(id);
+    public NoteDTO findOne(Long id){
+        return noteTransformer.entityToDto(noteRepository.findOne(id));
     }
     
-    public Note save(Note note){
-        return noteRepository.save(note);
+    public NoteDTO save(Note note){
+        return noteTransformer.entityToDto(noteRepository.save(note));
     }
     
     public void delete(Long id){

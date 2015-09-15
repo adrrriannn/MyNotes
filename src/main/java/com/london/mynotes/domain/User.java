@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.london.mynotes.domain;
 
 import javax.persistence.Column;
@@ -13,7 +8,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import org.hibernate.annotations.Type;
 /**
  *
  * @author adrián
@@ -86,6 +80,7 @@ public class User {
         this.role = role;
     }
     
+    @Override
     public String toString(){
         return "User [id = " + id + ", username = " + username + ", password = " +
                 password + ", avatar = " + avatar + ", email = " + email + "]";

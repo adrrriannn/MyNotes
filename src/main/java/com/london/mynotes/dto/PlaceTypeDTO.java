@@ -1,17 +1,22 @@
-package com.london.mynotes.form;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.london.mynotes.dto;
 
 /**
  *
  * @author adrián
  */
-public class PlaceTypeForm {
-            
+public class PlaceTypeDTO {
+    
     private Long id;
     
     private String name;
     
     private String description;
-    
+
     public Long getId() {
         return id;
     }
@@ -34,5 +39,5 @@ public class PlaceTypeForm {
 
     public void setDescription(String description) {
         this.description = description;
-    }
+    }   
 }

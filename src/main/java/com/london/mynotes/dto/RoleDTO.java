@@ -1,14 +1,21 @@
-package com.london.mynotes.form;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.london.mynotes.dto;
+
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author adrián
  */
-public class RoleForm {
+public class RoleDTO {
     
     private Long id;
     
-    private String rolename;
+    private String rolename;  
 
     public Long getId() {
         return id;
